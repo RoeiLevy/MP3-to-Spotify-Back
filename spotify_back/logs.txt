@@ -1,0 +1,147 @@
+context: 7d40e5eab52bcc87ed6c298b344f0a62
+﻿ 
+﻿╔══════════════════════════════ Nixpacks v1.10.1 ══════════════════════════════╗
+﻿║ setup      │ python38, gcc                                                   ║
+﻿║──────────────────────────────────────────────────────────────────────────────║
+﻿║ install    │ python -m venv --copies /opt/venv && . /opt/venv/bin/activate   ║
+﻿║            │ && pip install -r requirements.txt                              ║
+﻿║──────────────────────────────────────────────────────────────────────────────║
+﻿║ start      │ python manage.py migrate && python manage.py collectstatic      ║
+﻿║            │ --noinput && gunicorn mysite.wsgi                               ║
+﻿╚══════════════════════════════════════════════════════════════════════════════╝
+﻿ 
+﻿ 
+﻿#1 [internal] load .dockerignore
+﻿#1 transferring context: 2B done
+﻿ 
+﻿#1 DONE 0.1s
+﻿ 
+﻿#2 [internal] load build definition from Dockerfile
+﻿#2 transferring dockerfile: 2.00kB done
+﻿ 
+﻿#2 DONE 0.2s
+﻿ 
+﻿#3 [internal] load metadata for ghcr.io/railwayapp/nixpacks:ubuntu-1689033806
+﻿ 
+﻿#3 DONE 0.1s
+﻿ 
+﻿#4 [stage-0  1/12] FROM ghcr.io/railwayapp/nixpacks:ubuntu-1689033806@sha256:70ad0458be30ff05a362de56de50689a88220f4a3113c95030e92c3749c78c5b
+﻿#4 DONE 0.0s
+﻿ 
+﻿#5 [stage-0  2/12] WORKDIR /app/
+﻿#5 CACHED
+﻿ 
+﻿#6 [internal] load build context
+﻿#6 transferring context: 21.38kB done
+﻿#6 DONE 0.1s
+﻿ 
+﻿ 
+﻿#7 [stage-0 3/8] COPY .nixpacks/nixpkgs-293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847.nix .nixpacks/nixpkgs-293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847.nix
+﻿#7 CACHED
+﻿ 
+﻿#8 [stage-0 4/8] RUN nix-env -if .nixpacks/nixpkgs-293a28df6d7ff3dec1e61e37cc4ee6e6c0fb0847.nix && nix-collect-garbage -d
+﻿#8 CACHED
+﻿ 
+﻿#9 [stage-0 5/8] COPY . /app/.
+﻿#9 DONE 0.1s
+﻿ 
+﻿ 
+﻿#10 [stage-0 6/8] RUN --mount=type=cache,id=s/996db621-e3ad-4d5f-97e9-7865696cc383-/root/cache/pip,target=/root/.cache/pip python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt
+﻿ 
+﻿#10 6.173 Collecting asgiref==3.7.2
+﻿#10 6.257   Downloading asgiref-3.7.2-py3-none-any.whl (24 kB)
+﻿ 
+﻿#10 6.578 Collecting Django==4.2.3
+﻿#10 6.590   Downloading Django-4.2.3-py3-none-any.whl (8.0 MB)
+﻿ 
+﻿#10 6.730      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.0/8.0 MB 59.2 MB/s eta 0:00:00
+﻿ 
+﻿#10 6.903 Collecting django-cors-headers==4.2.0
+﻿#10 6.916   Downloading django_cors_headers-4.2.0-py3-none-any.whl (12 kB)
+﻿ 
+﻿#10 7.045 Collecting djangorestframework==3.14.0
+﻿#10 7.057   Downloading djangorestframework-3.14.0-py3-none-any.whl (1.1 MB)
+﻿#10 7.075      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.1/1.1 MB 72.1 MB/s eta 0:00:00
+﻿#10 7.145 Collecting gunicorn==20.1.0
+﻿ 
+﻿#10 7.157   Downloading gunicorn-20.1.0-py3-none-any.whl (79 kB)
+﻿#10 7.165      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 79.5/79.5 KB 15.8 MB/s eta 0:00:00
+﻿#10 7.229 Collecting mysqlclient==2.2.0
+﻿#10 7.242   Downloading mysqlclient-2.2.0.tar.gz (89 kB)
+﻿#10 7.250      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.5/89.5 KB 15.4 MB/s eta 0:00:00
+﻿ 
+﻿ 
+﻿#10 7.511   Installing build dependencies: started
+﻿ 
+﻿#10 11.88   Installing build dependencies: finished with status 'done'
+﻿#10 11.88   Getting requirements to build wheel: started
+﻿ 
+﻿#10 12.13   Getting requirements to build wheel: finished with status 'error'
+﻿ 
+﻿#10 12.15   error: subprocess-exited-with-error
+﻿#10 12.15
+﻿#10 12.15   × Getting requirements to build wheel did not run successfully.
+﻿#10 12.15   │ exit code: 1
+﻿#10 12.15   ╰─> [22 lines of output]
+﻿#10 12.15       Trying pkg-config --exists mysqlclient
+﻿#10 12.15       Command 'pkg-config --exists mysqlclient' returned non-zero exit status 1.
+﻿#10 12.15       Trying pkg-config --exists mariadb
+﻿#10 12.15       Command 'pkg-config --exists mariadb' returned non-zero exit status 1.
+﻿#10 12.15       Traceback (most recent call last):
+﻿#10 12.15         File "/opt/venv/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 363, in <module>
+﻿ 
+﻿#10 12.15           main()
+﻿#10 12.15         File "/opt/venv/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 345, in main
+﻿#10 12.15           json_out['return_val'] = hook(**hook_input['kwargs'])
+﻿#10 12.15         File "/opt/venv/lib/python3.8/site-packages/pip/_vendor/pep517/in_process/_in_process.py", line 130, in get_requires_for_build_wheel
+﻿#10 12.15           return hook(config_settings)
+﻿#10 12.15         File "/tmp/pip-build-env-2nllo693/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 341, in get_requires_for_build_wheel
+﻿#10 12.15           return self._get_build_requires(config_settings, requirements=['wheel'])
+﻿#10 12.15         File "/tmp/pip-build-env-2nllo693/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 323, in _get_build_requires
+﻿#10 12.15           self.run_setup()
+﻿#10 12.15         File "/tmp/pip-build-env-2nllo693/overlay/lib/python3.8/site-packages/setuptools/build_meta.py", line 338, in run_setup
+﻿#10 12.15           exec(code, locals())
+﻿#10 12.15         File "<string>", line 154, in <module>
+﻿#10 12.15         File "<string>", line 48, in get_config_posix
+﻿#10 12.15         File "<string>", line 27, in find_package_name
+﻿#10 12.15       Exception: Can not find valid pkg-config name.
+﻿#10 12.15       Specify MYSQLCLIENT_CFLAGS and MYSQLCLIENT_LDFLAGS env vars manually
+﻿#10 12.15       [end of output]
+﻿#10 12.15
+﻿#10 12.15   note: This error originates from a subprocess, and is likely not a problem with pip.
+﻿#10 12.15 error: subprocess-exited-with-error
+﻿#10 12.15
+﻿#10 12.15 × Getting requirements to build wheel did not run successfully.
+﻿#10 12.15 │ exit code: 1
+﻿#10 12.15 ╰─> See above for output.
+﻿#10 12.15
+﻿#10 12.15 note: This error originates from a subprocess, and is likely not a problem with pip.
+﻿#10 12.15 WARNING: You are using pip version 22.0.4; however, version 23.2 is available.
+﻿#10 12.15 You should consider upgrading via the '/opt/venv/bin/python -m pip install --upgrade pip' command.
+﻿ 
+﻿#10 ERROR: process "/bin/bash -ol pipefail -c python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt" did not complete successfully: exit code: 1
+﻿-----
+﻿> [stage-0 6/8] RUN --mount=type=cache,id=s/996db621-e3ad-4d5f-97e9-7865696cc383-/root/cache/pip,target=/root/.cache/pip python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt:
+﻿#10 12.15   note: This error originates from a subprocess, and is likely not a problem with pip.
+﻿#10 12.15 error: subprocess-exited-with-error
+﻿#10 12.15
+﻿#10 12.15 × Getting requirements to build wheel did not run successfully.
+﻿#10 12.15 │ exit code: 1
+﻿#10 12.15 ╰─> See above for output.
+﻿#10 12.15
+﻿#10 12.15 note: This error originates from a subprocess, and is likely not a problem with pip.
+﻿#10 12.15 WARNING: You are using pip version 22.0.4; however, version 23.2 is available.
+﻿#10 12.15 You should consider upgrading via the '/opt/venv/bin/python -m pip install --upgrade pip' command.
+﻿-----
+﻿ 
+﻿Dockerfile:20
+﻿-------------------
+﻿18 |     ENV NIXPACKS_PATH /opt/venv/bin:$NIXPACKS_PATH
+﻿19 |     COPY . /app/.
+﻿20 | >>> RUN --mount=type=cache,id=s/996db621-e3ad-4d5f-97e9-7865696cc383-/root/cache/pip,target=/root/.cache/pip python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt
+﻿21 |
+﻿22 |
+﻿-------------------
+﻿ERROR: failed to solve: process "/bin/bash -ol pipefail -c python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r requirements.txt" did not complete successfully: exit code: 1
+﻿ 
+﻿Error: Docker build failed
