@@ -79,14 +79,14 @@ WSGI_APPLICATION = "spotify_back.wsgi.application"
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "spotify",  # Scheme name
-        "USER": "root",
-        "PASSWORD": "pass",
-        "HOST": "localhost",
-        "PORT": "3306",
-    }
+    # "default": {
+    #     "ENGINE": "django.db.backends.mysql",
+    #     "NAME": "spotify",  # Scheme name
+    #     "USER": "root",
+    #     "PASSWORD": "pass",
+    #     "HOST": "localhost",
+    #     "PORT": "3306",
+    # }
 }
 
 # CORS settings
