@@ -25,7 +25,7 @@ SECRET_KEY = "_znxt7pr%(+@uj@5x3o=m+8b_nz3&+2%)3br^&ywny)drfp60c"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOST = ['*']
 
 
 # Application definition
@@ -44,7 +44,7 @@ INSTALLED_APPS = (
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -111,9 +111,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-STATIC_URL = "static/"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATIC_URL = "static/"
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
