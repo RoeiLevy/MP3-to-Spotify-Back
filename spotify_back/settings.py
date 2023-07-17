@@ -25,7 +25,7 @@ SECRET_KEY = "_znxt7pr%(+@uj@5x3o=m+8b_nz3&+2%)3br^&ywny)drfp60c"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOST = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -44,7 +44,6 @@ INSTALLED_APPS = (
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    # "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -52,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "spotify_back.urls"
@@ -79,14 +79,14 @@ WSGI_APPLICATION = "spotify_back.wsgi.application"
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.mysql",
-    #     "NAME": "spotify",  # Scheme name
-    #     "USER": "root",
-    #     "PASSWORD": "pass",
-    #     "HOST": "localhost",
-    #     "PORT": "3306",
-    # }
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "spotify", 
+        "USER": "root",
+        "PASSWORD": "pass",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
 }
 
 # CORS settings
@@ -111,9 +111,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-# STATIC_URL = "static/"
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
